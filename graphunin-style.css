@@ -74,6 +74,8 @@ h3 {
     margin: 0 auto;
   }
 
+/* centering search placeholder */
+
 ::-webkit-input-placeholder {
   text-align: center;
 }
@@ -98,6 +100,8 @@ h3 {
   margin-right: 1em;
   padding: .2em 0 .2em 1em;
   border-radius: 0px;
+  overflow: auto;
+  max-height: 750px;
 }
 
   .graph-search-results a {
