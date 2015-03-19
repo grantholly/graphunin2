@@ -1,42 +1,31 @@
 /* global styles */
 
-body {
-  font-family: Helvetica, "Open Sans", sans-serif;
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    /* color: rgb(61, 146, 201); */
 }
 
-.custom-restricted-width {
-  display: inline-block;
-  width: 100%;
+h3 {
+  font-weight: 100;
 }
 
-/*graph main display */
-
-.graph {
+.pure-form input[type="text"] {
+  border-radius: 0px;
+  display: block;
 }
 
-/* graph title div */
-
-.graph-title {
-}
-
-.graph-title h1 {
-  text-align: center;
-  font: 100 5.0em/0.75 "Helvetica Neue", "Open Sans", sans-serif;
-  color: rgb(174, 174, 174);
-}
-
-/* graph side bar and controls */
+/* graph-side menu area */
 
 .graph-side {
   background-color: rgb(61, 79, 93);
-  color: rgb(255, 255, 255);
-  border-top-right-radius: 4px;
   height: 100%;
+  font-size: 1em;
 }
 
 .graph-side-menu {
@@ -45,10 +34,27 @@ a {
 }
 
   .graph-side-menu a {
-    text-align: center;
+    text-align: left;
+    padding-left: 3em;
   }
 
-/* graph search */
+    .graph-side-menu .pure-menu-list {
+      margin-top: 8em;
+    }
+
+  .pure-menu-children {
+    margin-top: 0;
+  }
+
+/* graph-main-title main title area */
+
+.graph-main-title h1 {
+  text-align: center;
+  font: 100 5.0em/0.75 "Helvetica Neue", "Open Sans", sans-serif;
+  color: rgb(174, 174, 174);
+}
+
+/* graph-search search area */
 
 .graph-search {
   display: block;
@@ -61,15 +67,44 @@ a {
 
   .pure-control-group input {
     width: 350px;
+    margin: 0 auto;
   }
+
+  fieldset div .pure-control-group {
+    margin: 0 auto;
+  }
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+}
+
+/* graph-search-results search display area */
 
 .graph-search-results {
   background-color: rgb(174, 174, 174);
   margin-left: 1em;
+  margin-right: 1em;
   padding: .2em 0 .2em 1em;
-  border-radius: 4px;
+  border-radius: 0px;
 }
+
+  .graph-search-results a {
+    color: rgb(0, 0, 0);
+  }
 
   .graph-search-results h3:hover {
     /* need some kind of feedback here */
+    text-decoration: underline;
   }
