@@ -1,6 +1,9 @@
 var graphSearchCtrl = angular.module('graphSearchCtrl', []);
 
 graphSearchCtrl.controller('searchCtrl', function ($scope, $http) {
+    // default to non-prod graphite
+    $scope.selectedServer = graphSettings.servers.nonProduction;
+    $scope.nodes = [];
     /*
     for testing with local .json file
 
@@ -12,25 +15,56 @@ graphSearchCtrl.controller('searchCtrl', function ($scope, $http) {
     });
     */
 
-    //non-prod graphite HTTP endpoint returns non-prod machines
-    $http.get('http://pdxnpgraph01.iovationnp.com/metrics/find/?format=treejson&query=servers.*')
-    .success(
-      function (data) {
-        var end = data.length,
-            i;
+    $scope.getNodes = function (env) {
+      //get non-prod if on load
+      if ($scope.nodes.length === 0) {
+        $http.get(graphSettings.servers.nonProduction)
+          .success(
+            function (data) {
+              var end = data.length,
+                  i;
 
-        $scope.test_nodes = [];
-
-        for (i = 0; i < end; i++) {
-          $scope.test_nodes.push(data[i].text)
+              for (i = 0; i < end; i++) {
+                $scope.nodes.push(data[i].text);
+              }
+            }
+          )
+          .error(
+            function (response) {
+              console.log('there was an error contacting graphite ' + reponse);
+            }
+          )
         }
-        console.log($scope.test_nodes);
-      }
-    ).error(
-      function (response) {
-        console.log('there was an error contacting graphite. ERROR: ' + response);
-      }
-    );
+        //if they are trying to get the same node list as what already loaded
+        if (graphSettings.servers[env] === $scope.selectedServer) {
+          return false;
+        }
+        else {
+          $scope.selectedServer = graphSettings.servers[env];
+          $http.get($scope.selectedServer)
+            .success(
+              function (data) {
+                var end = data.length,
+                    i;
+
+                $scope.nodes = [];
+
+                for (i = 0; i < end; i++) {
+                  $scope.nodes.push(data[i].text);
+                }
+              }
+            )
+            .error(
+              function (response) {
+                console.log('there was an error contacting graphite ' + response);
+              }
+            )
+        }
+    }
+
+    //by deafult get the non-prod list
+    $scope.getNodes('nonProduction');
+
     /*
     return data:
     [
@@ -44,5 +78,18 @@ graphSearchCtrl.controller('searchCtrl', function ($scope, $http) {
       1: ...
     ]
     */
+});
 
+var graphMenuCtrl = angular.module('graphMenuCtrl', []);
+
+graphMenuCtrl.controller('menuCtrl', function ($scope) {
+    //this should set the server that the nodelist GET request uses
+    $scope.selectGraphServer = function (server) {
+      if (server === 'production') {
+        console.log('production selected');
+      }
+      else {
+        console.log('non-production selected');
+      }
+    }
 });
