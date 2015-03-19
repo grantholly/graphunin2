@@ -1,0 +1,21 @@
+- add css framework
+	DONE - I'm going with pure css because I'm tired of Bootstrap
+	  and I want to learn something else
+
+- create partials for the nodelist view and for the node detail view
+
+- create Angular app for searching and filtering on nodes
+	DONE - onload XHR to get a list of nodes and load that into $scope.nodes
+	DONE - as the user types in search, filter nodes with ng-repeat
+            - node in nodes
+	- onsubmit XHR for the node details
+		- might need a node detail template (partial) here
+		- as the user types a metric, filter with ng-repeat
+			- metric in metrics
+			- might have to add a custom data- attribute
+  
+  DONE - each node in the nodes list should be an <a> to the detail view
+	- need to link to production URLs for graphs
+            
+- need some kind of test network access to graphite to pull real
+  or more sample JSON objects for further testing

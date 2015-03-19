@@ -1,0 +1,75 @@
+/* global styles */
+
+body {
+  font-family: Helvetica, "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.custom-restricted-width {
+  display: inline-block;
+  width: 100%;
+}
+
+/*graph main display */
+
+.graph {
+}
+
+/* graph title div */
+
+.graph-title {
+}
+
+.graph-title h1 {
+  text-align: center;
+  font: 100 5.0em/0.75 "Helvetica Neue", "Open Sans", sans-serif;
+  color: rgb(174, 174, 174);
+}
+
+/* graph side bar and controls */
+
+.graph-side {
+  background-color: rgb(61, 79, 93);
+  color: rgb(255, 255, 255);
+  border-top-right-radius: 4px;
+  height: 100%;
+}
+
+.graph-side-menu {
+  width: 100%;
+  height: 33px;
+}
+
+  .graph-side-menu a {
+    text-align: center;
+  }
+
+/* graph search */
+
+.graph-search {
+  display: block;
+}
+
+  .graph-search form {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .pure-control-group input {
+    width: 350px;
+  }
+
+.graph-search-results {
+  background-color: rgb(174, 174, 174);
+  margin-left: 1em;
+  padding: .2em 0 .2em 1em;
+  border-radius: 4px;
+}
+
+  .graph-search-results h3:hover {
+    /* need some kind of feedback here */
+  }
