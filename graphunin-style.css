@@ -25,12 +25,12 @@ h3 {
 .graph-side {
   background-color: rgb(61, 79, 93);
   height: 100%;
-  font-size: 1em;
+  font-size: 18px;
 }
 
 .graph-side-menu {
   width: 100%;
-  height: 33px;
+  height: 37px;
 }
 
   .graph-side-menu a {
