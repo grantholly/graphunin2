@@ -1,6 +1,6 @@
 ===UI===
 
-- add css framework
+DONE - add css framework
 	DONE - I'm going with pure css because I'm tired of Bootstrap
 	  and I want to learn something else
 
@@ -12,7 +12,7 @@
 	DONE - onload XHR to get a list of nodes and load that into $scope.nodes
 	DONE - as the user types in search, filter nodes with ng-repeat
 
-  - changing servers allows you to point to prod or non-prod graphite
+  DONE - changing servers allows you to point to prod or non-prod graphite
     for the list of nodes
 
 	- onsubmit XHR for the node details
