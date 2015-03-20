@@ -46,6 +46,14 @@ h3 {
     margin-top: 0;
   }
 
+.graph-side-menu, .pure-menu-link {
+  -webkit-transition: all 0.2 ease-out;
+  -moz-transition: all 0.2 ease-out;
+  -ms-transition: all 0.2 ease-out;
+  -o-transition: all 0.2 ease-out;
+  transition: all 0.2 ease-out;
+}
+
 /* graph-main-title main title area */
 
 .graph-main-title h1 {
