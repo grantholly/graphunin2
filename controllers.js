@@ -16,7 +16,7 @@ graphSearchCtrl.controller('searchCtrl', function ($scope, $http) {
     */
 
     $scope.getNodes = function (env) {
-      //get non-prod if on load
+      //get non-prod on load
       if ($scope.nodes.length === 0) {
         $http.get(graphSettings.servers.nonProduction)
           .success(
