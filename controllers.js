@@ -86,4 +86,6 @@ graphNodeDetailCtrl.controller('graphNodeDetailCtrl', function ($scope, $http) {
     console.log("graphNodeDetailCtrl has loaded");
 
     console.log($scope.$parent.selectedServer);
+
+    $scope.selectedServer = $scope.$parent.selectedServer;
 });

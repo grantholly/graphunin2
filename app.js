@@ -5,6 +5,7 @@ var graphunin = angular.module('graphunin', [
     'graphNodeDetailCtrl'
 ]);
 
+//maybe make this a service
 var graphSettings = {
   servers: {
     production: 'http://wtf.iovation.us/metrics/find/?format=treejson&query=servers.*',
