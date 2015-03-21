@@ -59,8 +59,11 @@ h3 {
 .graph-main-title h1 {
   text-align: center;
   font: 100 5.0em/0.75 "Helvetica Neue", "Open Sans", sans-serif;
-  color: rgb(174, 174, 174);
 }
+
+  .graph-main-title h1 a {
+    color: rgb(174, 174, 174);
+  }
 
 /* graph-search search area */
 
@@ -109,7 +112,7 @@ h3 {
   padding: .2em 0 .2em 1em;
   border-radius: 0px;
   overflow: auto;
-  max-height: 750px;
+  max-height: 500px;
 }
 
   .graph-search-results a {
@@ -120,3 +123,11 @@ h3 {
     /* need some kind of feedback here */
     text-decoration: underline;
   }
+
+/* graph-detail display area */
+
+.graph-detail {
+  margin-left: 1em;
+  margin-right: 1em;
+  background-color: green;
+}

@@ -80,16 +80,10 @@ graphSearchCtrl.controller('searchCtrl', function ($scope, $http) {
     */
 });
 
-var graphMenuCtrl = angular.module('graphMenuCtrl', []);
+var graphNodeDetailCtrl = angular.module('graphNodeDetailCtrl', []);
 
-graphMenuCtrl.controller('menuCtrl', function ($scope) {
-    //this should set the server that the nodelist GET request uses
-    $scope.selectGraphServer = function (server) {
-      if (server === 'production') {
-        console.log('production selected');
-      }
-      else {
-        console.log('non-production selected');
-      }
-    }
+graphNodeDetailCtrl.controller('graphNodeDetailCtrl', function ($scope, $http) {
+    console.log("graphNodeDetailCtrl has loaded");
+
+    console.log($scope.$parent.selectedServer);
 });
